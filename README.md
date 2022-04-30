@@ -1,0 +1,1 @@
+# knct_iwsq_scrapbox_diagram

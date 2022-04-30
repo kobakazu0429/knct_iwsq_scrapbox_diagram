@@ -1,0 +1,14 @@
+{
+  "name": "knct_iwsq_scrapbox_diagram",
+  "version": "1.0.0",
+  "main": "main.mjs",
+  "repository": "ssh://git@github.com/kobakazu0429/knct_iwsq_scrapbox_diagram.git",
+  "author": "kobakazu0429 <kobakazu10@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node main.mjs"
+  },
+  "dependencies": {
+    "viz.js": "^2.1.2"
+  }
+}

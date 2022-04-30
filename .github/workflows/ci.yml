@@ -11,22 +11,21 @@ jobs:
   generate:
     runs-on: ubuntu-latest
 
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
         with:
           go-version: '1.17'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
       - name: fetch
         run: ./run.sh
       - name: generate
         run: |
-          sudo apt update
-          sudo apt install -y --no-install-recommends graphviz graphviz-dev
-      - uses: mxschmitt/action-tmate@v3
-          # dot -Tsvg _work/iwsq.dot -o iwsq.svg
+          yarn install
+          yarn start
       - name: commit
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}

@@ -3,6 +3,9 @@ name: generate-and-commit-files
 on:
   schedule:
     - cron: '0 0 * * *'
+  push:
+  workflow_dispatch:
+
 
 jobs:
   generate:

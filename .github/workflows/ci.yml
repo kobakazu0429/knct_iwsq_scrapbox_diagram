@@ -26,6 +26,7 @@ jobs:
           sudo apt update
           sudo apt install -y --no-install-recommends graphviz graphviz-dev
           dot -Tsvg _work/iwsq.dot -o iwsq.svg
+      - uses: mxschmitt/action-tmate@v3
       - name: commit
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}

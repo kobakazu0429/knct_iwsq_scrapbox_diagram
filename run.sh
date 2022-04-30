@@ -14,5 +14,3 @@ cat << 'EOS' | sed -i '1r /dev/stdin' _work/iwsq.dot
   ranksep = 1.0
   nodesep = 1.0
 EOS
-
-dot _work/iwsq.dot -Tsvg -Kfdp -o iwsq.svg

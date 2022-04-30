@@ -20,9 +20,14 @@ jobs:
         with:
           go-version: '1.17'
       - uses: ts-graphviz/setup-graphviz@v1
-      - name: generate
+      - name: fetch
         run: ./run.sh
-      - name: Commit to repository
+      - name: generate
+        run: |
+          apt update
+          apt install -y --no-install-recommends graphviz graphviz-dev
+          dot _work/iwsq.dot -Tsvg -o iwsq.svg
+      - name: commit
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         run: |

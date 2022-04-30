@@ -25,7 +25,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y --no-install-recommends graphviz graphviz-dev
-          dot _work/iwsq.dot -Tsvg -o iwsq.svg
+          dot -Tsvg _work/iwsq.dot -o iwsq.svg
       - name: commit
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
